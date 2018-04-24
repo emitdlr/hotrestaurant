@@ -19,11 +19,18 @@ var tables = [
   }
 ];
 
-var waitlist = [];
+var waitlist = [
+{
+    name: "John",
+    phoneNumber: "555-555-5555",
+    email: "hello@goodbye.com",
+    id: 1233
+  }
+];
 
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/tables", function(req, res) {
@@ -41,7 +48,6 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/waitlist", function(req, res) {
   return res.json(waitlist);
 });
-
 
 
 
